@@ -33,3 +33,43 @@ git checkout main		//switch to main branch
 git merge main	// perform merge on main
 git push origin main	//push changes to github repo
 
+EXPERIMENT 4 : Git Rebase
+	Create a repository in your local machine and perform the following steps-
+
+//Master 
+git init
+notepad a.txt
+git add .
+git commit –m “First commit”
+git branch feature
+
+//Feature
+notepad b.txt
+git add .
+git commit –m “Seond commit”
+git checkout master
+
+//Master
+notepad c.txt
+git add .
+git commit –m “Third commit”
+git checkout feature
+//Feature
+git rebase master
+git log 
+git checkout master
+
+//Master
+notepad d.txt
+git add .
+git commit –m “Fourth commit”
+git log	//to check commit history on master
+git checkout feature
+
+//Feature
+notepad e.txt
+git add .
+git commit –m “Fifth commit”
+git log  //to check commit history on feature
+git rebase master
+git log
